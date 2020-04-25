@@ -1,0 +1,16 @@
+- var transComp = "/transactions/" + tra
+h1 Transactions
+a(href="/transactions/create") Create a new transaction
+ol
+  each transaction in transactions
+    li
+      span= transaction.userID
+      span : &nbsp
+      span= transaction.bookID
+      span &nbsp
+      span= transaction.isComplete
+      span &nbsp
+      if transaction.isComplete
+        span Completed
+      else
+        a(href='/transactions/' + transaction.id + '/complete') Complete
